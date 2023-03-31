@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 
 using namespace std;
 
@@ -18,12 +19,40 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1}
 	};
 
-	while(true)
+	int PlayerX = 1;
+	int PlayerY = 1;
+	bool bisRunning = true;
+
+	while(bisRunning) //GameLoop
 	{
+		//Frame
+		//Input();
+		char Key;
+		Key = _getch();
+		//Tick();
+		if (Key == 'd')
+		{
+			PlayerX++;
+		}
+		else if (Key == 'a')
+		{
+			PlayerX--;
+		}
+		else if (Key == 'w')
+		{
+			PlayerY--;
+		}
+		else if (Key == 's')
+		{
+			PlayerY++;
+		}
+		else if (Key == 'q')
+		{
+			bisRunning = false;
+		}
 
-		int PlayerX = 1;
-		int PlayerY = 1;
-
+		//Render();
+		system("cls");
 		for (int Y = 0; Y < 10; ++Y)
 		{
 			for (int X = 0; X < 10; ++X)
@@ -43,7 +72,7 @@ int main()
 			}
 			cout << endl;
 		}
-		system("cls");
+
 	}
 
 	return 0;
